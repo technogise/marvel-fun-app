@@ -1,34 +1,18 @@
 import React, { Fragment } from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native';
+import { StyleSheet } from 'react-native';
+import SearchScreen from './app/screens/SearchScreen';
 
 const App = () => {
   return (
     <Fragment>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}
-        >
-          <View>
-            <Text>React Native Work shop</Text>
-          </View>
-        </ScrollView>
-      </SafeAreaView>
+      <SearchScreen />
     </Fragment>
   );
 };
 
 const styles = StyleSheet.create({
   scrollView: {
-    backgroundColor: '#fff',
+    backgroundColor: '#fff'
   },
 });
 
