@@ -8,6 +8,12 @@ export default StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around'
   },
+  listContainer: {
+    flex: 0.9,
+    padding: 5,
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+  },
   container: {
     flex: 1,
     flexDirection: 'column'
