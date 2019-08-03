@@ -1,5 +1,5 @@
 import React from "react";
-import { FlatList, Text, View, StyleSheet, Image } from "react-native";
+import { FlatList, Text, View, Image } from "react-native";
 import styles from './styles/ListStyle';
 
 export default class List extends React.Component {
@@ -15,7 +15,11 @@ export default class List extends React.Component {
     return (
       <View style={styles.row}>
         <View style={styles.imageContainer}>
-          <Image style={styles.thumbnail} source={{ uri: item.thumbnailUrl }} />
+          <Image
+            style={styles.thumbnail}
+            source={{ uri: item.thumbnailUrl }}
+            resizeMode={'cover'}
+          />
         </View>
         <View style={styles.item}>
           <Text>{item.name}</Text>
