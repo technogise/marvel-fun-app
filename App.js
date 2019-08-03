@@ -1,19 +1,7 @@
-import React, { Fragment } from 'react';
-import { StyleSheet } from 'react-native';
+import React from 'react';
 import SearchScreen from './app/screens/SearchScreen';
 
 const App = () => {
-  return (
-    <Fragment>
-      <SearchScreen />
-    </Fragment>
-  );
+  return <SearchScreen />;
 };
-
-const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: '#fff'
-  },
-});
-
 export default App;

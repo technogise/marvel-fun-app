@@ -1,25 +1,21 @@
-import { SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { View, TextInput } from 'react-native';
 import React from 'react';
+import Button from '../components/Button';
+import styles from './styles/SearchScreenStyle';
 
 const SearchScreen = () => {
   return (
-    <SafeAreaView>
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={styles.scrollView}
-      >
-        <View>
-          <Text>React Native Work shop</Text>
+    <View style={styles.container}>
+      <View style={styles.controlContainer}>
+        <View style={styles.textInputContainer}>
+          <TextInput style={styles.searchInput} />
         </View>
-      </ScrollView>
-    </SafeAreaView>
+        <View style={styles.buttonContainer}>
+          <Button>SEARCH</Button>
+        </View>
+      </View>
+    </View>
   );
 };
-
-const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: '#fff'
-  },
-});
 
 export default SearchScreen;
