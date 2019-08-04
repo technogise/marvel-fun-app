@@ -1,8 +1,12 @@
 import React from "react";
-import { FlatList, Text, View, Image } from "react-native";
+import { FlatList, Text, View, Image, TouchableOpacity } from "react-native";
 import styles from './styles/ListStyle';
 
 export default class List extends React.Component {
+  constructor() {
+    super();
+    this.renderItem = this.renderItem.bind(this);
+  }
   renderSeparator() {
     return (
       <View style={styles.separatorContainer}>
@@ -13,18 +17,20 @@ export default class List extends React.Component {
 
   renderItem({ item }) {
     return (
-      <View style={styles.row}>
-        <View style={styles.imageContainer}>
-          <Image
-            style={styles.thumbnail}
-            source={{ uri: item.thumbnailUrl }}
-            resizeMode={'cover'}
-          />
+      <TouchableOpacity onPress={() => this.props.onItemClick(item)}>
+        <View style={styles.row}>
+          <View style={styles.imageContainer}>
+            <Image
+              style={styles.thumbnail}
+              source={{ uri: item.thumbnailUrl }}
+              resizeMode={'cover'}
+            />
+          </View>
+          <View style={styles.item}>
+            <Text>{item.name}</Text>
+          </View>
         </View>
-        <View style={styles.item}>
-          <Text>{item.name}</Text>
-        </View>
-      </View>
+      </TouchableOpacity>
     );
   }
 

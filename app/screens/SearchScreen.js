@@ -11,6 +11,7 @@ export default class SearchScreen extends React.Component {
       searchText: ''
     };
     this.onSearch = this.onSearch.bind(this);
+    this.gotoCharacterScreen = this.gotoCharacterScreen.bind(this);
   }
 
   getParsedData(apiData) {
@@ -46,6 +47,10 @@ export default class SearchScreen extends React.Component {
       });
   }
 
+  gotoCharacterScreen(item) {
+    this.props.navigation.navigate('Character', item);
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -61,7 +66,7 @@ export default class SearchScreen extends React.Component {
           </View>
         </View>
         <View style={styles.listContainer}>
-          <List data={this.state.data} />
+          <List data={this.state.data} onItemClick={this.gotoCharacterScreen} />
         </View>
       </View>
     );

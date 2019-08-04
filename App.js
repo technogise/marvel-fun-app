@@ -1,7 +1,8 @@
 import React from 'react';
-import SearchScreen from './app/screens/SearchScreen';
+import Navigator from './app/Navigator';
 
 const App = () => {
-  return <SearchScreen />;
+  return <Navigator />;
 };
+
 export default App;
